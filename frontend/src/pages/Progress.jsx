@@ -107,7 +107,7 @@ const Progress = () => {
     return Object.values(grouped);
   })();
 
-  const inputClass = "w-full rounded-lg border border-border bg-secondary px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all";
+  const inputClass = "w-full rounded-lg border border-border bg-secondary px-4 py-3 text-black placeholder:text-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all";
 
   return (
     <div className="min-h-screen bg-background">
