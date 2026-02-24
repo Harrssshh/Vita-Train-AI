@@ -1,0 +1,14 @@
+import axios from "axios";
+
+const API = axios.create({
+  baseURL: "http://localhost:5000/api",
+});
+
+// attach Firebase token automatically
+API.interceptors.request.use(async (config) => {
+  const token = localStorage.getItem("vita_token");
+  if (token) config.headers.Authorization = `Bearer ${token}`;
+  return config;
+});
+
+export default API;
