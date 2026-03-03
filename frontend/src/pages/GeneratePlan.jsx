@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import WorkoutForm from "../components/WorkoutForm";
-import { generatePlan } from "../services/aiService"; // ADD THIS
+import { generatePlan } from "../services/aiService"; 
 import { Sparkles, CheckCircle, Download, Dumbbell, Utensils, Droplets, Calendar } from "lucide-react";
 import { jsPDF } from "jspdf";
 

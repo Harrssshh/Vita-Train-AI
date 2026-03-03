@@ -1,25 +1,25 @@
 import { useAuth } from "../context/AuthContext";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import PlanCard from "../components/PlanCard";
-import { Sparkles, TrendingUp, History, Dumbbell, Ruler, Weight, UserCircle, Target, Heart, Activity } from "lucide-react";
+// import PlanCard from "../components/PlanCard";
+import { Sparkles, TrendingUp,  Dumbbell, Ruler, Weight, UserCircle, Target, Heart, Activity } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const Dashboard = () => {
   const { user, fitnessProfile } = useAuth();
-  const [plans, setPlans] = useState([]);
+  // const [plans, setPlans] = useState([]);
 
-  useEffect(() => {
-    const loadPlans = async () => {
-      try {
-        const data = await getWorkoutHistory();
-        setPlans(data);
-      } catch (e) {
-        console.error(e);
-      }
-    };
-    loadPlans();
-  }, []);
+  // seEffect(() => {
+  //   const loadPlans = async () => {
+  //     try {
+  //       const data = await getWorkoutHistory();
+  //       setPlans(data);
+  //     } catch (e) {
+  //       console.error(e);
+  //     }
+  //   };
+  //   loadPlans();
+  // }, []);u
 
   const hasProfile = fitnessProfile?.age && fitnessProfile?.weight && fitnessProfile?.height;
 
@@ -162,7 +162,26 @@ const Dashboard = () => {
           ))}
         </div>
 
-        {/* Quick Actions */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+  <Link
+    to="/generate"
+    className="glass-card p-6 flex items-center gap-4 hover:border-primary/30 transition-all group"
+  >
+    <div className="flex h-12 w-12 items-center justify-center rounded-xl gradient-primary">
+      <Sparkles className="h-6 w-6 text-primary-foreground" />
+    </div>
+    <div>
+      <h3 className="font-display font-semibold text-foreground group-hover:text-primary transition-colors">
+        Generate New Plan
+      </h3>
+      <p className="text-sm text-muted-foreground">
+        Create an AI workout & diet plan
+      </p>
+    </div>
+  </Link>
+</div>
+
+        {/* Quick Actions
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
           <Link
             to="/generate"
@@ -195,7 +214,7 @@ const Dashboard = () => {
         </div>
 
         {/* Recent Plans */}
-        <div>
+        {/* <div>
           <h2 className="text-xl font-display font-semibold text-foreground mb-4">Recent Plans</h2>
           {plans.length > 0 ? (
             <div className="grid gap-4">
@@ -216,7 +235,7 @@ const Dashboard = () => {
               </Link>
             </div>
           )}
-        </div>
+        // </div> */}
       </main>
     </div>
   );
