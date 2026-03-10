@@ -7,6 +7,7 @@ const WorkoutForm = ({ onSubmit, loading }) => {
 
   const [age, setAge] = useState(fitnessProfile?.age || "");
   const [weight, setWeight] = useState(fitnessProfile?.weight || "");
+  const [targetWeight, setTargetWeight] = useState("");
   const [height, setHeight] = useState(fitnessProfile?.height || "");
   const [goal, setGoal] = useState(fitnessProfile?.goal || "muscle gain");
   const [experience, setExperience] = useState("intermediate");
@@ -17,7 +18,6 @@ const WorkoutForm = ({ onSubmit, loading }) => {
   const [gender, setGender] = useState("male");
   const [dietPreference, setDietPreference] = useState("veg");
 
-  // ⭐ NEW FIELDS (diet accuracy)
   const [supplements, setSupplements] = useState("none");
   const [foodRestrictions, setFoodRestrictions] = useState("");
 
@@ -28,6 +28,7 @@ const WorkoutForm = ({ onSubmit, loading }) => {
     onSubmit({
       age: Number(age),
       weight: Number(weight),
+      targetWeight: Number(targetWeight),
       height: Number(height),
       goal,
       experience,
@@ -70,20 +71,50 @@ const WorkoutForm = ({ onSubmit, loading }) => {
         Personal Info
       </h3>
 
-      <div className="grid grid-cols-3 gap-3">
-        <input type="number" placeholder="Age" value={age} onChange={(e)=>setAge(e.target.value)} className={inputClass}/>
-        <input type="number" placeholder="Height (cm)" value={height} onChange={(e)=>setHeight(e.target.value)} className={inputClass}/>
-        <input type="number" placeholder="Weight (kg)" value={weight} onChange={(e)=>setWeight(e.target.value)} className={inputClass}/>
+      <div className="grid grid-cols-4 gap-3">
+        <input
+          type="number"
+          placeholder="Age"
+          value={age}
+          onChange={(e) => setAge(e.target.value)}
+          className={inputClass}
+        />
+
+        <input
+          type="number"
+          placeholder="Height (cm)"
+          value={height}
+          onChange={(e) => setHeight(e.target.value)}
+          className={inputClass}
+        />
+
+        <input
+          type="number"
+          placeholder="Current Weight (kg)"
+          value={weight}
+          onChange={(e) => setWeight(e.target.value)}
+          className={inputClass}
+        />
+
+        <input
+          type="number"
+          placeholder="Target Weight (kg)"
+          value={targetWeight}
+          onChange={(e) => setTargetWeight(e.target.value)}
+          className={inputClass}
+        />
       </div>
 
       <div className="grid grid-cols-2 gap-3">
-        <select value={gender} onChange={(e)=>setGender(e.target.value)} className={inputClass}>
+        <select value={gender} onChange={(e) => setGender(e.target.value)} className={inputClass}>
           <option value="male">Male</option>
           <option value="female">Female</option>
         </select>
 
-        <select value={goal} onChange={(e)=>setGoal(e.target.value)} className={inputClass}>
-          {goals.map(g => <option key={g}>{g}</option>)}
+        <select value={goal} onChange={(e) => setGoal(e.target.value)} className={inputClass}>
+          {goals.map((g) => (
+            <option key={g}>{g}</option>
+          ))}
         </select>
       </div>
 
@@ -94,32 +125,39 @@ const WorkoutForm = ({ onSubmit, loading }) => {
       </div>
 
       <div className="grid grid-cols-2 gap-3">
-        <select value={experience} onChange={(e)=>setExperience(e.target.value)} className={inputClass}>
-          {experienceLevels.map(l => <option key={l}>{l}</option>)}
+        <select value={experience} onChange={(e) => setExperience(e.target.value)} className={inputClass}>
+          {experienceLevels.map((l) => (
+            <option key={l}>{l}</option>
+          ))}
         </select>
 
-        <select value={equipment} onChange={(e)=>setEquipment(e.target.value)} className={inputClass}>
-          {equipmentOptions.map(eq => <option key={eq}>{eq}</option>)}
+        <select value={equipment} onChange={(e) => setEquipment(e.target.value)} className={inputClass}>
+          {equipmentOptions.map((eq) => (
+            <option key={eq}>{eq}</option>
+          ))}
         </select>
       </div>
 
       <div className="grid grid-cols-2 gap-3">
-        <select value={daysPerWeek} onChange={(e)=>setDaysPerWeek(e.target.value)} className={inputClass}>
-          {[3,4,5,6].map(d => <option key={d}>{d} days</option>)}
+        <select value={daysPerWeek} onChange={(e) => setDaysPerWeek(e.target.value)} className={inputClass}>
+          {[3, 4, 5, 6].map((d) => (
+            <option key={d}>{d} days</option>
+          ))}
         </select>
 
-        <select value={duration} onChange={(e)=>setDuration(e.target.value)} className={inputClass}>
-          {[30,45,60,75,90].map(d => <option key={d}>{d} min</option>)}
+        <select value={duration} onChange={(e) => setDuration(e.target.value)} className={inputClass}>
+          {[30, 45, 60, 75, 90].map((d) => (
+            <option key={d}>{d} min</option>
+          ))}
         </select>
       </div>
 
-      <select value={dietPreference} onChange={(e)=>setDietPreference(e.target.value)} className={inputClass}>
+      <select value={dietPreference} onChange={(e) => setDietPreference(e.target.value)} className={inputClass}>
         <option value="veg">Vegetarian</option>
         <option value="nonveg">Non-Vegetarian</option>
       </select>
 
-      {/* ⭐ NEW INPUTS */}
-      <select value={supplements} onChange={(e)=>setSupplements(e.target.value)} className={inputClass}>
+      <select value={supplements} onChange={(e) => setSupplements(e.target.value)} className={inputClass}>
         <option value="none">No Supplements</option>
         <option value="whey">Whey Allowed</option>
         <option value="all">All Supplements OK</option>
@@ -129,7 +167,7 @@ const WorkoutForm = ({ onSubmit, loading }) => {
         type="text"
         placeholder="Food allergies / restrictions"
         value={foodRestrictions}
-        onChange={(e)=>setFoodRestrictions(e.target.value)}
+        onChange={(e) => setFoodRestrictions(e.target.value)}
         className={inputClass}
       />
 
@@ -138,7 +176,7 @@ const WorkoutForm = ({ onSubmit, loading }) => {
         disabled={loading}
         className="w-full flex items-center justify-center gap-2 rounded-lg gradient-primary px-6 py-3.5 font-semibold text-primary-foreground"
       >
-        {loading ? <Loader2 className="animate-spin"/> : <Sparkles/>}
+        {loading ? <Loader2 className="animate-spin" /> : <Sparkles />}
         Generate AI Plan
       </button>
     </form>

@@ -74,6 +74,7 @@ Generate a precise personalized fitness diet plan.
 USER DATA:
 Age: ${data?.age}
 Weight: ${data?.weight}
+Target Weight: ${data?.targetWeight}
 Height: ${data?.height}
 Gender: ${data?.gender}
 Goal: ${data?.goal}
@@ -103,6 +104,11 @@ IMPORTANT CONDITIONS:
    - Balanced macros.
 
 5. Include realistic Indian-style foods when possible.
+
+6. If goal = "weight loss":
+- Use targetWeight to estimate total weight to lose
+- Recommend 400–600 kcal daily deficit
+- Provide estimated weeks to reach target weight
 `
         }
       ],
