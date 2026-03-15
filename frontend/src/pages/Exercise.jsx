@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
-import { Search, Filter, Dumbbell, Target, ChevronDown, ChevronUp, Flame } from "lucide-react";
+import { Search, Dumbbell, Target, ChevronDown, ChevronUp, Flame } from "lucide-react";
 
 const exerciseDatabase = {
   chest: {

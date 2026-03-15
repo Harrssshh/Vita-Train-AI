@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import Navbar from "../components/Navbar";
-import { Calculator, Droplets, Flame, Timer, RotateCcw, Play, Pause, Trophy, Target, Zap } from "lucide-react";
+import { Calculator, Droplets, Flame, Timer, RotateCcw, Play, Pause, Trophy, Target} from "lucide-react";
 
 const Tools = () => {
   const [activeTab, setActiveTab] = useState("1rm");

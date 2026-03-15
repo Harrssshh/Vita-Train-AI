@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
-import { CalendarDays, ChevronRight, CheckCircle, Circle, Flame, Timer, RotateCcw, Zap, Heart } from "lucide-react";
+import { CalendarDays, ChevronRight, CheckCircle, Circle, Flame, Timer, Zap, Heart } from "lucide-react";
 
 const workoutSchedule = [
   {
