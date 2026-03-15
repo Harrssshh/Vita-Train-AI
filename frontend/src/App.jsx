@@ -10,6 +10,8 @@ import Dashboard from "./pages/Dashboard";
 import GeneratePlan from "./pages/GeneratePlan";
 import Progress from "./pages/Progress";
 // import History from "./pages/History";
+import Exercises from "./pages/Exercise";
+import Tools from "./pages/Tools";
 import Profile from "./pages/Profile";
 import Workouts from "./pages/Workouts";
 import NotFound from "./pages/NotFound";
@@ -27,6 +29,8 @@ const App = () => (
 
           <Route path="/workouts" element={<ProtectedRoute><Workouts /></ProtectedRoute>} />
           <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+          <Route path="/exercises" element={<ProtectedRoute><Exercises /></ProtectedRoute>} />
+          <Route path="/tools" element={<ProtectedRoute><Tools /></ProtectedRoute>} />
           <Route path="/generate" element={<ProtectedRoute><GeneratePlan /></ProtectedRoute>} />
           <Route path="/progress" element={<ProtectedRoute><Progress /></ProtectedRoute>} />
           {/* <Route path="/history" element={<ProtectedRoute><History /></ProtectedRoute>} /> */}

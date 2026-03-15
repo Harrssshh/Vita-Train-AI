@@ -19,6 +19,8 @@ const Navbar = () => {
     { to: "/generate", label: "Generate Plan", icon: Sparkles },
     { to: "/workouts", label: "Workouts", icon: CalendarDays },
     { to: "/progress", label: "Progress", icon: TrendingUp },
+    { to: "/exercises", label: "Exercises", icon: Dumbbell },
+    { to: "/tools", label: "Tools", icon: Sparkles },
     // { to: "/history", label: "History", icon: History },
     { to: "/profile", label: "Profile", icon: User },
   ];
