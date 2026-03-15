@@ -72,11 +72,11 @@ const OneRepMaxCalc = () => {
         <div className="space-y-4">
           <div className="space-y-1.5">
             <label className="text-sm font-medium text-foreground">Weight Lifted (kg)</label>
-            <input type="number" value={weight} onChange={(e) => setWeight(e.target.value)} placeholder="e.g. 80" className="w-full rounded-lg border border-border bg-secondary px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" />
+            <input type="number" value={weight} onChange={(e) => setWeight(e.target.value)} placeholder="e.g. 80" className="w-full rounded-lg border border-border bg-secondary px-4 py-3 text-black placeholder:text-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" />
           </div>
           <div className="space-y-1.5">
             <label className="text-sm font-medium text-foreground">Reps Performed</label>
-            <input type="number" value={reps} onChange={(e) => setReps(e.target.value)} placeholder="e.g. 5" min="1" max="30" className="w-full rounded-lg border border-border bg-secondary px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" />
+            <input type="number" value={reps} onChange={(e) => setReps(e.target.value)} placeholder="e.g. 5" min="1" max="30" className="w-full rounded-lg border border-border bg-secondary px-4 py-3 text-black placeholder:text-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" />
           </div>
         </div>
         {oneRM && (
@@ -124,7 +124,7 @@ const CalorieCalc = () => {
     setResult({ bmr: Math.round(bmr), tdee, cut: tdee - 500, bulk: tdee + 300, maintain: tdee });
   };
 
-  const inputClass = "w-full rounded-lg border border-border bg-secondary px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all";
+  const inputClass = "w-full rounded-lg border border-border bg-secondary px-4 py-3 text-black placeholder:text-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all";
 
   return (
     <div className="grid lg:grid-cols-2 gap-6">
@@ -387,7 +387,7 @@ const MacroSplitter = () => {
         <div className="space-y-4">
           <div className="space-y-1.5">
             <label className="text-sm font-medium text-foreground">Daily Calories</label>
-            <input type="number" value={calories} onChange={(e) => setCalories(e.target.value)} placeholder="e.g. 2200" className="w-full rounded-lg border border-border bg-secondary px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" />
+            <input type="number" value={calories} onChange={(e) => setCalories(e.target.value)} placeholder="e.g. 2200" className="w-full rounded-lg border border-border bg-secondary px-4 py-3 text-black placeholder:text-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" />
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
             {Object.entries(splits).map(([key, s]) => (

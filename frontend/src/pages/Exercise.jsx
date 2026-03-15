@@ -120,7 +120,7 @@ const Exercises = () => {
               placeholder="Search exercises..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full rounded-lg border border-border bg-secondary pl-10 pr-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+              className="w-full rounded-lg border border-border bg-secondary pl-10 pr-4 py-3 text-black placeholder:text-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
             />
           </div>
           <div className="flex gap-2">
