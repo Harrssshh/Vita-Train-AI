@@ -135,37 +135,23 @@ const Dashboard = () => {
         )}
 
         <div className="grid sm:grid-cols-2 gap-6 mb-6">
-
+          {/* BMI Card */}
           {hasProfile && bmi && (
             <div className="glass-card p-6">
               <div className="flex items-center gap-2 mb-4">
                 <Heart className="h-5 w-5 text-primary" />
                 <h2 className="text-lg font-display font-semibold text-foreground">BMI</h2>
               </div>
-
               <div className="flex items-end gap-2 mb-1">
                 <span className="text-4xl font-bold font-display text-foreground">{bmi}</span>
-                <span className={`text-sm font-semibold mb-1 ${bmiCategory.color}`}>
-                  {bmiCategory.label}
-                </span>
+                <span className={`text-sm font-semibold mb-1 ${bmiCategory.color}`}>{bmiCategory.label}</span>
               </div>
-
-              <p className="text-xs text-muted-foreground mb-3">
-                {fitnessProfile.weight}kg · {fitnessProfile.height}cm
-              </p>
-
+              <p className="text-xs text-muted-foreground mb-3">{fitnessProfile.weight}kg · {fitnessProfile.height}cm</p>
               <div className="w-full h-3 rounded-full bg-secondary overflow-hidden">
-                <div
-                  className="h-full rounded-full bg-gradient-to-r from-blue-400 via-primary to-orange-400 transition-all duration-500"
-                  style={{ width: `${bmiPercent}%` }}
-                />
+                <div className="h-full rounded-full bg-gradient-to-r from-blue-400 via-primary to-orange-400 transition-all duration-500" style={{ width: `${bmiPercent}%` }} />
               </div>
-
               <div className="flex justify-between mt-1 text-[10px] text-muted-foreground">
-                <span>Underweight</span>
-                <span>Normal</span>
-                <span>Overweight</span>
-                <span>Obese</span>
+                <span>Underweight</span><span>Normal</span><span>Overweight</span><span>Obese</span>
               </div>
             </div>
           )}
@@ -173,19 +159,10 @@ const Dashboard = () => {
           <Link to="/workouts" className="glass-card p-6 hover:border-primary/30 transition-all group block">
             <div className="flex items-center gap-2 mb-4">
               <CalendarDays className="h-5 w-5 text-primary" />
-              <h2 className="text-lg font-display font-semibold text-foreground">
-                Today's Workout
-              </h2>
+              <h2 className="text-lg font-display font-semibold text-foreground">Today's Workout</h2>
             </div>
-
-            <p className="text-2xl font-bold font-display text-foreground mb-1">
-              {todayWorkout.day}
-            </p>
-
-            <p className="text-lg text-primary font-semibold">
-              {todayWorkout.focus}
-            </p>
-
+            <p className="text-2xl font-bold font-display text-foreground mb-1">{todayWorkout.day}</p>
+            <p className="text-lg text-primary font-semibold">{todayWorkout.focus}</p>
             <p className="text-sm text-muted-foreground mt-3 group-hover:text-foreground transition-colors">
               Tap to view exercises →
             </p>
