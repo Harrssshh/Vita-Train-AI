@@ -2,7 +2,7 @@ import { useAuth } from "../context/AuthContext";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { useState } from "react";
-import { Sparkles, Dumbbell, Ruler, Weight, UserCircle, Target, Heart, Droplets, CalendarDays, Zap } from "lucide-react";
+import { Sparkles, Dumbbell, Ruler, Weight, UserCircle, Target, Heart, Droplets, CalendarDays, Zap,Calculator, TrendingUp } from "lucide-react";
 
 const motivationalQuotes = [
   "The only bad workout is the one that didn't happen. 💪",
@@ -190,9 +190,38 @@ const Dashboard = () => {
               Tap to view exercises →
             </p>
           </Link>
-
+        </div>
+        {/* Stats */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+          {stats.map((stat) => (
+            <div key={stat.label} className="glass-card p-5 flex items-center gap-4">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
+                <stat.icon className="h-5 w-5 text-primary" />
+              </div>
+              <div>
+                <p className="text-xl font-bold font-display text-foreground">{stat.value}</p>
+                <p className="text-xs text-muted-foreground">{stat.label}</p>
+              </div>
+            </div>
+          ))}
         </div>
 
+        {/* Quick Actions */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+          {[
+            { to: "/generate", label: "Generate Plan", icon: Sparkles, gradient: true },
+            { to: "/exercises", label: "Exercise Library", icon: Dumbbell },
+            { to: "/tools", label: "Fitness Tools", icon: Calculator },
+            { to: "/progress", label: "Track Progress", icon: TrendingUp },
+          ].map((action) => (
+            <Link key={action.to} to={action.to} className="glass-card p-5 flex flex-col items-center gap-3 hover:border-primary/30 transition-all group text-center">
+              <div className={`flex h-12 w-12 items-center justify-center rounded-xl ${action.gradient ? "gradient-primary" : "bg-primary/10"}`}>
+                <action.icon className={`h-6 w-6 ${action.gradient ? "text-primary-foreground" : "text-primary"}`} />
+              </div>
+              <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">{action.label}</span>
+            </Link>
+          ))}
+        </div>
       </main>
     </div>
   );
