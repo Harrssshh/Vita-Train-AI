@@ -192,8 +192,8 @@ const Dashboard = () => {
             { to: "/progress", label: "Track Progress", icon: TrendingUp },
           ].map((action) => (
             <Link key={action.to} to={action.to} className="glass-card p-5 flex flex-col items-center gap-3 hover:border-primary/30 transition-all group text-center">
-              <div className={`flex h-12 w-12 items-center justify-center rounded-xl ${action.gradient ? "gradient-primary" : "bg-primary/10"}`}>
-                <action.icon className={`h-6 w-6 ${action.gradient ? "text-primary-foreground" : "text-primary"}`} />
+              <div className={`flex h-12 w-12 items-center justify-center rounded-xl ${action.gradient ? "gradient-primary shadow-lg shadow-primary/30" : "bg-primary/10 shadow-md shadow-primary/20"}`}>
+                <action.icon className={`h-6 w-6 ${action.gradient ? "text-primary-foreground" : "text-primary drop-shadow-[0_0_6px_rgba(132,204,22,0.6)]"}`} />
               </div>
               <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">{action.label}</span>
             </Link>
