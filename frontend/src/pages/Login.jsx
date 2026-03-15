@@ -9,7 +9,7 @@ const Login = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const { login, googleLogin } = useAuth(); // 👈 ADD googleLogin
+  const { login, googleLogin } = useAuth(); 
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
