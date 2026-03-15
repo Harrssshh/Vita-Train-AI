@@ -71,7 +71,7 @@ const exerciseDatabase = {
       { name: "Hanging Leg Raises", sets: "3x12-15", muscle: "Lower Abs", difficulty: "Intermediate", gif: "/gifs/Hanging-Leg-Raises.gif", tips: "Control the swing, raise legs to parallel, slow negative." },
       { name: "Cable Crunches", sets: "3x15-20", muscle: "Upper Abs", difficulty: "Beginner", gif: "/gifs/Standing-Cable-Crunch.gif", tips: "Curl down, bring elbows to knees, squeeze abs." },
       { name: "Russian Twists", sets: "3x20", muscle: "Obliques", difficulty: "Beginner", gif: "/gifs/Russian-Twist.gif", tips: "Lean back slightly, rotate fully, touch floor each side." },
-      { name: "Mountain Climbers", sets: "3x30s", muscle: "Full Core", difficulty: "Beginner", gif: "/gifs/Mountain-climbers.gif", tips: "Keep hips low, drive knees to chest, maintain pace." },
+      { name: "Mountain Climbers", sets: "3x30s", muscle: "Full Core", difficulty: "Beginner", gif: "/gifs/Mountain-climber.gif", tips: "Keep hips low, drive knees to chest, maintain pace." },
       { name: "Ab Wheel Rollout", sets: "3x10", muscle: "Full Core", difficulty: "Advanced", gif: "/gifs/Ab-Wheel-Rollout.gif", tips: "Start from knees, extend fully, engage core throughout." },
     ],
   },
