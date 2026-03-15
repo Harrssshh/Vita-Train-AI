@@ -2,7 +2,6 @@ import { useAuth } from "../context/AuthContext";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { Sparkles, Dumbbell, Ruler, Weight, UserCircle, Target, Heart, Droplets, CalendarDays, Zap } from "lucide-react";
-import { useState } from "react";
 
 const motivationalQuotes = [
   "The only bad workout is the one that didn't happen. 💪",
