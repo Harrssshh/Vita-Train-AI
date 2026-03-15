@@ -1,6 +1,7 @@
 import { useAuth } from "../context/AuthContext";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import { useState } from "react";
 import { Sparkles, Dumbbell, Ruler, Weight, UserCircle, Target, Heart, Droplets, CalendarDays, Zap } from "lucide-react";
 
 const motivationalQuotes = [
